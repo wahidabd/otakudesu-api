@@ -5,7 +5,6 @@ const router = require('./router/index')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const fileUload = require('express-fileupload')
-const req = require('express/lib/request')
 
 app.use(cors())
 

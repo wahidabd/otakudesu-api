@@ -5,7 +5,7 @@ const baseUrl = url.baseUrl
 const completeAnime = url.completeAnime
 const onGoingAnime = url.onGoingAnime
 const error = require('../helpers/error')
-const imageList = require('../helpers/image_genre')
+const ImageList = require('../helpers/image_genre').ImageList
 const express = require('express')
 
 exports.home = (req, res) => {
@@ -228,7 +228,7 @@ exports.genre = (req, res) => {
         object.image_link = ImageList[i];
         genreList.push(object);
     });
-    res.json({ genreList });
+        res.json({ genreList });
     })
     .catch((err) => {
     console.log(err.message);

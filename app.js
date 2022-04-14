@@ -27,6 +27,13 @@ app.use('/api', (req, res) => {
     })
 })
 
+app.use('*', (req, res,) => {
+    res.json({
+        status: 'Path not found',
+        message: 'Read documentation here https://github.com/wahidabd/otakudesu-api'
+    })
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

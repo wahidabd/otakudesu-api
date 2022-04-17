@@ -253,7 +253,10 @@ exports.epsMirror = async (req, res) => {
     obj.id = fullUrl.replace(url.baseUrl, "");
     const streamLink = $('#pembed > div > iframe').attr('src')
     obj.streamLink = streamLink
-    obj.link_stream = await episodeHelper.get(streamLink);
+    // obj.link_stream = await episodeHelper.get(streamLink);
+    // obj.default = $("html > body").find('#mediaplayer').attr('id');
+    const videoLink = $('#filesplayer').attr('role');
+    obj.videoLink = videoLink
     res.send(obj);
   } catch (error) {
     console.log(error);
@@ -343,5 +346,4 @@ function _notFoundQualityHandler(res,num){
     }
   })
   return response;
-
 }
